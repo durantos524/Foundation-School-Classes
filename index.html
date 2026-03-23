@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Foundation School Registration</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 40px auto; padding: 20px; background: #f9f9f9; }
+    h1 { text-align: center; color: #333; }
+    .logo { display: block; margin: 0 auto 20px; max-width: 200px; height: auto; }
+    label { display: block; margin: 10px 0 5px; font-weight: bold; }
+    input, select { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; }
+    button { background: #4CAF50; color: white; padding: 12px; border: none; border-radius: 5px; width: 100%; font-size: 16px; cursor: pointer; }
+    button:hover { background: #45a049; }
+    .success { color: green; text-align: center; margin-top: 20px; display: none; }
+  </style>
+</head>
+<body>
+
+  <img src="C:\Users\DURAN\Desktop\FOUNDATION SCHOOL\httpsi.imgur.comyourlogo.png.png" alt="Church Logo" class="logo" />
+
+  <h1>Foundation School Registration</h1>
+
+  <form id="registrationForm" action="https://forms.gle/NDjJKhEVAgt9rZUS8" method="POST">
+    <!-- Hidden timestamp field – Google handles it -->
+    <input type="hidden" name="entry.123456789" value="">
+
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" name="entry.987654321" required />
+
+    <label for="surname">Surname</label>
+    <input type="text" id="surname" name="entry.111222333" required />
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="entry.444555666" required />
+
+    <label for="church">Church</label>
+    <input type="text" id="church" name="entry.777888999" required />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="entry.222333444" required />
+
+    <label for="cellName">Name of Cell</label>
+    <input type="text" id="cellName" name="entry.555666777" required />
+
+    <label for="seniorCell">Senior Cell</label>
+    <input type="text" id="seniorCell" name="entry.888999000" required />
+
+    <label for="stage">Starting Stage</label>
+    <select id="stage" name="entry.333444555" required>
+      <option value="">Select one...</option>
+      <option value="Stage 1">Stage 1</option>
+    </select>
+
+    <button type="submit">Submit Registration</button>
+  </form>
+
+  <div class="success" id="successMsg">Thanks! You're registered—check your email soon for class details.</div>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const success = document.getElementById('successMsg');
+
+    form.addEventListener('submit', function(e) {
+      setTimeout(() => {
+        success.style.display = 'block';
+        form.reset();
+      }, 1500);
+    });
+  </script>
+</body>
+</html>
